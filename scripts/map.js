@@ -204,6 +204,12 @@ function addPOIsToMap(geoJSONfeatureCollection) {
       }
     }
 
+    var createdDate = new Date(feature.properties._created)
+    var created = createdDate.toLocaleDateString()
+
+    var timestampDate = new Date(feature.properties._timestamp)
+    var timestamp = timestampDate.toLocaleDateString()
+
     var pdata = {
       icon:  new L.divIcon({
         className: 'my-div-icon' + cats,
@@ -211,6 +217,8 @@ function addPOIsToMap(geoJSONfeatureCollection) {
         html:"<div><div>" + feature.properties.name + "</div></div>"
       }),
       popup: livePopup,
+      created: created,
+      modified: timestamp,
       tags: feature.properties,
       properties: feature.properties // is used by _ template
     }
@@ -1340,6 +1348,8 @@ var dictionary = {
     "set_filters" : "set Filters",
     "imprint" : "Imprint",
     "linked_data" : "Linked Data",
+    "creation_date" : "Date of Entry",
+    "modification_date" : "Date of Update",
     "susy_disclaimer" : "This website has been produced with the financial assistance of the European Union. The contents of this website are the sole responsibility of the SUSY initiative and can under no circumstances be regarded as reflecting the position of the European Union.",
     "" : "",
     "LAST:":""

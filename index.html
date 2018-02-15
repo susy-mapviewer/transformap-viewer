@@ -151,6 +151,14 @@
     </span> <% } %>
 
       </p>
+      <h3><%- T("creation_date") %></h3>
+      <p>
+        <%- created %>
+      </p>
+      <h3><%- T("modification_date") %></h3>
+      <p>
+        <%- modified %>
+      </p>
       <h3><%- T("linked_data") %></h3>
       <table>
         <% if (properties['osm']) { %>
