@@ -825,7 +825,7 @@ function resetFilter() {
   $("ul.type-of-initiative").hide();
   $("ul.subcategories").hide();
   $('#searchFilter').val('');
-  applySearchFilter('');
+  applySearchFilter('', new MouseEvent('click'));
   removeFromFilter("*");
   trigger_Filter();
   $("#activefilters ul").append("<li class=hint><span trn=clickanyfilterhint>"+T("clickanyfilterhint")+"</span><div class=close onClick=\"clickMinus('hint')\">×</div></li>");
